@@ -37,7 +37,7 @@ jobs:
         run: python3 scripts/check_links.py
 
       - name: Upload link check report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: link-check-report
           path: catalog/link-check-report.json

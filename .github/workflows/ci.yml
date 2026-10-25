@@ -1,0 +1,69 @@
+# Continuous integration for Arguo.
+# No secret-dependent steps: all jobs use public inputs from the repository.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    name: Python tests and lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package with dev dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: ruff check python/ tests/ scripts/ evals/ examples/
+
+      - name: Test (pytest, offline)
+        run: python3 -m pytest tests/ -q
+
+  data-validation:
+    name: Resource and skill validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate resource authoring files
+        run: python3 scripts/validate_resources.py
+
+      - name: Rebuild merged catalog
+        run: python3 scripts/build_resource_catalog.py
+
+      - name: Validate skill package
+        run: python3 scripts/validate_skill.py all
+
+      - name: Offline link check
+        run: python3 scripts/check_links.py
+
+      - name: Generate docs index
+        run: python3 scripts/generate_docs.py
+
+  style-check:
+    name: Style check (no em dashes, no en dashes, no emoji)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run style check
+        run: python3 tools/style_check.py

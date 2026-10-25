@@ -1,0 +1,81 @@
+# Deploy the Next.js docs site to GitHub Pages.
+#
+# Configuration notes:
+# - next.config.ts reads NEXT_OUTPUT: when it is set to "export", next build
+#   emits a static site into out/. The default build output stays "standalone",
+#   so local development is unchanged.
+# - package.json's build script copies .next/standalone files that only exist
+#   in standalone output, so this workflow runs "next build" directly through
+#   bunx instead of "bun run build".
+# - NEXT_PUBLIC_BASE_PATH makes asset URLs work at the repository subpath
+#   https://OWNER.github.io/arguo/. Remove it when deploying
+#   to a custom domain at the zone root.
+# - Requires Pages to be enabled in repository settings with the source set
+#   to "GitHub Actions".
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate docs data (stdlib only)
+        run: python3 scripts/generate_docs.py
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install site dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build static export
+        env:
+          NEXT_OUTPUT: export
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: bunx --bun next build
+
+      - name: Disable Jekyll processing
+        run: touch out/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    name: Deploy to Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

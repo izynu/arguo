@@ -1,0 +1,650 @@
+[
+ {
+  "group": "core-concepts",
+  "slug": "cc-overview",
+  "title": "System Overview",
+  "description": "The four parts of Arguo and how data flows between them during a research run.",
+  "order": 1,
+  "path": "docs/core-concepts/cc-overview.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-architecture",
+  "title": "Architecture",
+  "description": "Package layout of arguo, module by module, with each responsibility.",
+  "order": 2,
+  "path": "docs/core-concepts/cc-architecture.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-workflow",
+  "title": "The Research Workflow",
+  "description": "The ten pipeline stages A to J, what each consumes, and what each produces.",
+  "order": 3,
+  "path": "docs/core-concepts/cc-workflow.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-research-plans",
+  "title": "Research Plans",
+  "description": "The ResearchPlan schema, heuristic versus model planning, and the honest limits of both.",
+  "order": 4,
+  "path": "docs/core-concepts/cc-research-plans.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-search-retrieval",
+  "title": "Search and Retrieval",
+  "description": "The provider interface, normalized results, deduplication rules, retry behavior, and fetch caching.",
+  "order": 5,
+  "path": "docs/core-concepts/cc-search-retrieval.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-evidence-ledger",
+  "title": "The evidence ledger",
+  "description": "Every EvidenceRecord field, why explicit nulls matter, and the ledger JSON shape.",
+  "order": 6,
+  "path": "docs/core-concepts/cc-evidence-ledger.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-claims-sources-provenance",
+  "title": "Claims, Sources, and Provenance",
+  "description": "ClaimRecord and SourceRecord fields, the S/E/C id scheme, provenance, and retrieval timestamps.",
+  "order": 7,
+  "path": "docs/core-concepts/cc-claims-sources-provenance.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-primary-secondary",
+  "title": "Primary, Secondary, and Tertiary Sources",
+  "description": "Definitions of the three source tiers, when each is appropriate, and how the toolkit records source_type.",
+  "order": 8,
+  "path": "docs/core-concepts/cc-primary-secondary.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-source-quality",
+  "title": "Source Quality Rubric",
+  "description": "The SourceAssessment fields, how the rule based assessor works, and why there are no numeric trust scores.",
+  "order": 9,
+  "path": "docs/core-concepts/cc-source-quality.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-corroboration",
+  "title": "Corroboration and Independence",
+  "description": "How independence groups, syndication detection, and corroboration groups separate real confirmation from repetition.",
+  "order": 10,
+  "path": "docs/core-concepts/cc-corroboration.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-contradictions",
+  "title": "Contradictions",
+  "description": "How the toolkit detects numeric contradictions, where a model assisted scan fits, and how conflicts are resolved.",
+  "order": 11,
+  "path": "docs/core-concepts/cc-contradictions.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-citation-verification",
+  "title": "Citation Verification",
+  "description": "The citation checker's rules, the verdict vocabulary, and what automated checking can and cannot establish.",
+  "order": 12,
+  "path": "docs/core-concepts/cc-citation-verification.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-dates",
+  "title": "Dates",
+  "description": "Publication, event, and retrieval dates, explicit unknown handling, and why nothing is guessed.",
+  "order": 13,
+  "path": "docs/core-concepts/cc-dates.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-uncertainty",
+  "title": "Uncertainty",
+  "description": "Qualitative confidence with reasons, no invented percentages, and insufficiency as a legitimate outcome.",
+  "order": 14,
+  "path": "docs/core-concepts/cc-uncertainty.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-budgets-profiles",
+  "title": "Budgets and Profiles",
+  "description": "The ResearchBudget fields, how BudgetTracker enforces them, and how profiles differ.",
+  "order": 15,
+  "path": "docs/core-concepts/cc-budgets-profiles.md"
+ },
+ {
+  "group": "core-concepts",
+  "slug": "cc-caching",
+  "title": "Caching",
+  "description": "The ResponseCache file format, TTL, the cache clear command, fetch cache keys, and reproducibility notes.",
+  "order": 16,
+  "path": "docs/core-concepts/cc-caching.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-setup",
+  "title": "Development Setup",
+  "description": "How to install the toolkit for development, build the catalog, run validators, tests, and lint.",
+  "order": 1,
+  "path": "docs/developer-guide/dg-setup.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-cli-reference",
+  "title": "CLI Reference",
+  "description": "Every arguo command, option, default, and exit code, taken from the Typer application in cli.py.",
+  "order": 2,
+  "path": "docs/developer-guide/dg-cli-reference.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-python-api",
+  "title": "Python API Reference",
+  "description": "The key public functions and classes of arguo with their real signatures.",
+  "order": 3,
+  "path": "docs/developer-guide/dg-python-api.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-data-models",
+  "title": "Data Models Reference",
+  "description": "Field tables for the Pydantic models shared across the research pipeline.",
+  "order": 4,
+  "path": "docs/developer-guide/dg-data-models.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-providers",
+  "title": "Providers and Model Adapters",
+  "description": "The SearchProvider and ModelAdapter contracts, the built-in Tavily and OpenAI-compatible implementations, and how to add your own.",
+  "order": 5,
+  "path": "docs/developer-guide/dg-providers.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-orchestration",
+  "title": "Orchestration Internals",
+  "description": "How ResearchOrchestrator runs stages A to J, records StageResults, enforces budgets, and degrades on model failures.",
+  "order": 6,
+  "path": "docs/developer-guide/dg-orchestration.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-output-schemas",
+  "title": "Output Schemas",
+  "description": "The six artifacts a research run writes, their fields, and small JSON examples.",
+  "order": 7,
+  "path": "docs/developer-guide/dg-output-schemas.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-config-reference",
+  "title": "Configuration Reference",
+  "description": "Settings fields, environment variables, budgets, and the built-in research profiles.",
+  "order": 8,
+  "path": "docs/developer-guide/dg-config-reference.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-errors-logging",
+  "title": "Errors and Logging",
+  "description": "The typed exception hierarchy with exit codes, structured logging setup, and secret redaction.",
+  "order": 9,
+  "path": "docs/developer-guide/dg-errors-logging.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-extending",
+  "title": "Extending the Pipeline",
+  "description": "How to add stages, providers, and versioned prompts while keeping the toolkit contracts stable.",
+  "order": 10,
+  "path": "docs/developer-guide/dg-extending.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-testing",
+  "title": "Testing Guide",
+  "description": "How the test suite is organized, how the offline search fixtures work, and how to run subsets offline.",
+  "order": 11,
+  "path": "docs/developer-guide/dg-testing.md"
+ },
+ {
+  "group": "developer-guide",
+  "slug": "dg-contributing-code",
+  "title": "Contributing Code",
+  "description": "Setup for contributors, branch naming, commit style, the pull request checklist, and what reviewers look for.",
+  "order": 12,
+  "path": "docs/developer-guide/dg-contributing-code.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-introduction",
+  "title": "Introduction",
+  "description": "What Arguo is, what it ships, who it is for, and what it honestly does not do.",
+  "order": 1,
+  "path": "docs/getting-started/gs-introduction.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-installation",
+  "title": "Installation",
+  "description": "Prerequisites, clone and install steps, verification commands, and optional API key setup.",
+  "order": 2,
+  "path": "docs/getting-started/gs-installation.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-quickstart",
+  "title": "Quickstart",
+  "description": "A five minute path from install to a complete run, offline first, then a live run with real providers.",
+  "order": 3,
+  "path": "docs/getting-started/gs-quickstart.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-first-research",
+  "title": "Your First Research Run",
+  "description": "A stage by stage walkthrough of one offline run, the files it produces, and how to read them.",
+  "order": 4,
+  "path": "docs/getting-started/gs-first-research.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-cli-tutorial",
+  "title": "CLI Tutorial",
+  "description": "A tour of every arguo command group, research flags, and the exit code table.",
+  "order": 5,
+  "path": "docs/getting-started/gs-cli-tutorial.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-python-tutorial",
+  "title": "Python Tutorial",
+  "description": "Using settings, profiles, the orchestrator, and the EvidenceLedger class directly from Python.",
+  "order": 6,
+  "path": "docs/getting-started/gs-python-tutorial.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-configuration",
+  "title": "Configuration",
+  "description": "How settings resolve from environment variables, what each ARGUO variable does, and what each profile changes.",
+  "order": 7,
+  "path": "docs/getting-started/gs-configuration.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-environment-variables",
+  "title": "Environment Variables",
+  "description": "Complete reference for every environment variable Arguo reads and how secrets are protected.",
+  "order": 8,
+  "path": "docs/getting-started/gs-environment-variables.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-troubleshooting",
+  "title": "Troubleshooting",
+  "description": "Common failure symptoms, their causes, and the exact fix for each.",
+  "order": 9,
+  "path": "docs/getting-started/gs-troubleshooting.md"
+ },
+ {
+  "group": "getting-started",
+  "slug": "gs-faq",
+  "title": "FAQ",
+  "description": "Straight answers about guarantees, costs, data storage, extensibility, and contribution.",
+  "order": 10,
+  "path": "docs/getting-started/gs-faq.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "general-research-workflow",
+  "title": "General research workflow",
+  "description": "The core Arguo workflow for factual questions, from scoping to verdicts, with profiles and a worked command.",
+  "order": 1,
+  "path": "docs/handbook/hb-general.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "academic-research",
+  "title": "Academic and literature research",
+  "description": "Using scholarly query variants, review registries, and study quality checks for literature oriented research.",
+  "order": 2,
+  "path": "docs/handbook/hb-academic.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "technical-research",
+  "title": "Software and standards research",
+  "description": "Researching software, versions, and standards with official documentation, changelogs, and security advisories first.",
+  "order": 3,
+  "path": "docs/handbook/hb-technical.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "market-research",
+  "title": "Company and market research",
+  "description": "Grounding company and market claims in filings, official market data, and corroboration across independent domains.",
+  "order": 4,
+  "path": "docs/handbook/hb-market.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "historical-research",
+  "title": "Historical research",
+  "description": "Working with archives and digitized newspapers while keeping event dates, publication dates, and interpretations separate.",
+  "order": 5,
+  "path": "docs/handbook/hb-historical.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "policy-research",
+  "title": "Policy and regulatory research",
+  "description": "Reading legislation and regulation from official portals, using the official_source flag, and separating legal text from commentary.",
+  "order": 6,
+  "path": "docs/handbook/hb-policy.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "quantitative-research",
+  "title": "Verifying numbers",
+  "description": "Checking units, denominators, and time windows, using contradiction analysis, and reporting precision honestly.",
+  "order": 7,
+  "path": "docs/handbook/hb-quantitative.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "fact-checking",
+  "title": "Fact-checking workflow",
+  "description": "Extracting claims, applying the verdict vocabulary, and keeping the evidence ledger as the audit trail.",
+  "order": 8,
+  "path": "docs/handbook/hb-fact-checking.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "reporting-standards",
+  "title": "Reporting standards",
+  "description": "The fifteen required report elements, the S and E citation identifiers, and what the audit summary covers.",
+  "order": 9,
+  "path": "docs/handbook/hb-reporting.md"
+ },
+ {
+  "group": "handbook",
+  "slug": "research-quality-checklist",
+  "title": "Research quality checklist",
+  "description": "Fifteen checks to run before a research result is called finished.",
+  "order": 10,
+  "path": "docs/handbook/hb-checklist.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-about",
+  "title": "About Arguo",
+  "description": "Why the project exists, what is built today, what is not, and the design principles it follows.",
+  "order": 1,
+  "path": "docs/project/pj-about.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-roadmap",
+  "title": "Roadmap",
+  "description": "What is implemented, what is in progress, and what is planned in Arguo, with no dates promised.",
+  "order": 2,
+  "path": "docs/project/pj-roadmap.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-changelog",
+  "title": "Changelog",
+  "description": "Notable changes to Arguo, starting with the 0.1.0 initial release.",
+  "order": 3,
+  "path": "docs/project/pj-changelog.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-governance",
+  "title": "Governance",
+  "description": "How Arguo makes decisions, adds maintainers, and keeps its work transparent.",
+  "order": 4,
+  "path": "docs/project/pj-governance.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-code-of-conduct",
+  "title": "Code of Conduct",
+  "description": "A condensed code of conduct for all Arguo project spaces, including scope, reporting, and enforcement.",
+  "order": 5,
+  "path": "docs/project/pj-code-of-conduct.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-license",
+  "title": "License",
+  "description": "Arguo code is Apache-2.0, with separate practical notes for catalog data and third-party marks.",
+  "order": 6,
+  "path": "docs/project/pj-license.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-security-policy",
+  "title": "Security Policy",
+  "description": "How to report vulnerabilities in Arguo privately, what is in scope, what is not, and what response to expect.",
+  "order": 7,
+  "path": "docs/project/pj-security-policy.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-support",
+  "title": "Support",
+  "description": "Where to ask questions about Arguo, how to report bugs well, and what response times to expect.",
+  "order": 8,
+  "path": "docs/project/pj-support.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-citation",
+  "title": "Citing Arguo",
+  "description": "How to cite the Arguo repository in academic work, with a BibTeX entry and a pointer to CITATION.cff.",
+  "order": 9,
+  "path": "docs/project/pj-citation.md"
+ },
+ {
+  "group": "project",
+  "slug": "pj-publishing",
+  "title": "Publishing Checklist",
+  "description": "A numbered launch checklist for the repository owner, from repo creation to final checks.",
+  "order": 10,
+  "path": "docs/project/pj-publishing.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-evaluation",
+  "title": "Evaluation Philosophy",
+  "description": "How Arguo evaluates itself, what the offline runner can and cannot measure, and why no score is published without a real run behind it.",
+  "order": 1,
+  "path": "docs/quality-safety/qs-evaluation.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-benchmarks",
+  "title": "Benchmark Cases",
+  "description": "The planned benchmark case mix for Arguo, the case file format, how cases are run, and how new cases are added.",
+  "order": 2,
+  "path": "docs/quality-safety/qs-benchmarks.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-citation-precision",
+  "title": "Citation Metrics",
+  "description": "Precise definitions, formulas, and limitations of the citation quality metrics computed or judged in Arguo.",
+  "order": 3,
+  "path": "docs/quality-safety/qs-citation-precision.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-prompt-injection",
+  "title": "Prompt Injection Defense",
+  "description": "The threat model, delimiter wrapping, and the seven detection heuristics that keep retrieved web content acting as data inside Arguo.",
+  "order": 4,
+  "path": "docs/quality-safety/qs-prompt-injection.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-ssrf",
+  "title": "SSRF Defenses",
+  "description": "What the URL guard and fetcher block before any network request, and the residual risks that remain, documented plainly.",
+  "order": 5,
+  "path": "docs/quality-safety/qs-ssrf.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-secrets-privacy",
+  "title": "Secrets and Privacy",
+  "description": "How Arguo handles credentials, what it stores locally, and why it sends nothing anywhere except provider calls.",
+  "order": 6,
+  "path": "docs/quality-safety/qs-secrets-privacy.md"
+ },
+ {
+  "group": "quality-safety",
+  "slug": "qs-high-stakes",
+  "title": "High-Stakes Limitations",
+  "description": "Why Arguo output is an aid for medical, legal, financial, and safety questions, never an authority, and what human review it requires.",
+  "order": 7,
+  "path": "docs/quality-safety/qs-high-stakes.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "browsing-the-catalog",
+  "title": "Browsing the resource catalog",
+  "description": "How to search, list, and inspect the resource catalog with the resources commands and the website explorer.",
+  "order": 1,
+  "path": "docs/resource-library/rl-browse.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "category-taxonomy",
+  "title": "The category taxonomy",
+  "description": "The 50 category keys of the resource catalog, grouped in a compact table showing what belongs where.",
+  "order": 2,
+  "path": "docs/resource-library/rl-categories.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "academic-discovery-spotlight",
+  "title": "Academic discovery spotlight",
+  "description": "Ten flagship scholarly discovery resources in the catalog and what each is best for.",
+  "order": 3,
+  "path": "docs/resource-library/rl-academic.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "government-economics-spotlight",
+  "title": "Government statistics and economics spotlight",
+  "description": "Twelve official statistical and economic data resources in the catalog, one line each.",
+  "order": 4,
+  "path": "docs/resource-library/rl-government-economics.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "health-spotlight",
+  "title": "Biomedical and health spotlight",
+  "description": "Nine biomedical literature, trial registry, and evidence synthesis resources, with a note on evidence hierarchies.",
+  "order": 5,
+  "path": "docs/resource-library/rl-health.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "environment-spotlight",
+  "title": "Climate and environment spotlight",
+  "description": "Nine climate, ecology, and environment data resources in the catalog, one line each.",
+  "order": 6,
+  "path": "docs/resource-library/rl-environment.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "software-legal-spotlight",
+  "title": "Software, standards, and law spotlight",
+  "description": "Eleven resources for packages, documentation, vulnerabilities, and legal texts, one line each.",
+  "order": 7,
+  "path": "docs/resource-library/rl-software-legal.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "archives-news-spotlight",
+  "title": "Archives, news, and fact-checking spotlight",
+  "description": "Eleven archive, newspaper, investigative, and fact-checking resources in the catalog, one line each.",
+  "order": 8,
+  "path": "docs/resource-library/rl-archives-news.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "quality-and-licensing",
+  "title": "Verification statuses and licensing",
+  "description": "What documented, verified, community-submitted, and deprecated mean, and how license fields handle unknowns.",
+  "order": 9,
+  "path": "docs/resource-library/rl-quality-licensing.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "contributing-a-resource",
+  "title": "Contributing a resource",
+  "description": "How to add a catalog record: schema rules, pull request steps, validation, and review criteria.",
+  "order": 10,
+  "path": "docs/resource-library/rl-contributing.md"
+ },
+ {
+  "group": "resource-library",
+  "slug": "sync-pipeline",
+  "title": "The sync pipeline",
+  "description": "How resource-sources.yaml and sync_resources.py keep catalog changes deliberate, safe, and reproducible.",
+  "order": 11,
+  "path": "docs/resource-library/rl-sync.md"
+ },
+ {
+  "group": "skill-guide",
+  "slug": "sk-overview",
+  "title": "Arguo Skill Overview",
+  "description": "What the arguo Agent Skill is, what it does, and when an agent should load it.",
+  "order": 1,
+  "path": "docs/skill-guide/sk-overview.md"
+ },
+ {
+  "group": "skill-guide",
+  "slug": "sk-installing",
+  "title": "Installing the Skill",
+  "description": "Where to copy the arguo skill folder, how to verify it, and sample invocations.",
+  "order": 2,
+  "path": "docs/skill-guide/sk-installing.md"
+ },
+ {
+  "group": "skill-guide",
+  "slug": "sk-contents",
+  "title": "Skill Package Contents",
+  "description": "The structure of SKILL.md, the 20 reference files and when each is loaded, templates, and examples.",
+  "order": 3,
+  "path": "docs/skill-guide/sk-contents.md"
+ },
+ {
+  "group": "skill-guide",
+  "slug": "sk-customizing",
+  "title": "Customizing the Skill",
+  "description": "How to adapt the arguo skill for a domain, keep SKILL.md small, and what must not change.",
+  "order": 4,
+  "path": "docs/skill-guide/sk-customizing.md"
+ },
+ {
+  "group": "skill-guide",
+  "slug": "sk-troubleshooting",
+  "title": "Skill Troubleshooting",
+  "description": "Fixes for a skill that will not activate, missing references, validator failures, and style rule violations.",
+  "order": 5,
+  "path": "docs/skill-guide/sk-troubleshooting.md"
+ }
+]

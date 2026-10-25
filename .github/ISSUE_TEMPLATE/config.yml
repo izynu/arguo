@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+# TODO(owner): add contact_links when a support or security channel exists
+# outside the issue tracker, for example:
+#
+# contact_links:
+#   - name: Security reports
+#     url: https://github.com/OWNER/arguo/security/advisories/new
+#     about: Report security issues privately instead of opening a public issue.
+#   - name: Questions and support
+#     url: https://github.com/OWNER/arguo/discussions
+#     about: Ask questions before filing an issue.

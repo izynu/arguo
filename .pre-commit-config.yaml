@@ -1,0 +1,37 @@
+# Pre-commit hooks for Evidence Ledger. Enable with: pre-commit install
+# The style-check hook enforces the project writing rules: no em dashes,
+# no en dashes, no emoji. tools/style_check.py with no arguments scans the
+# default set: docs/, skill/, src/app/, src/components/site/, README.md,
+# CHANGELOG.md, CONTRIBUTING.md.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.md$
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+
+  - repo: local
+    hooks:
+      - id: validate-skill
+        name: validate skill package
+        entry: python3 scripts/validate_skill.py
+        args: [skill/evidence-ledger]
+        language: system
+        files: ^skill/
+        pass_filenames: false
+
+      - id: style-check
+        name: style check (no em dashes, no en dashes, no emoji)
+        entry: python3 tools/style_check.py
+        language: system
+        pass_filenames: false

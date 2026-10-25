@@ -1,0 +1,35 @@
+# Live (network) link checks.
+#
+# Live checks are opt-in and polite: they run only when triggered by hand,
+# are capped at 100 requests per run, and write a report artifact instead of
+# changing repository files.
+name: Live link check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-check:
+    name: Live link check (max 100 URLs)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install httpx for live checks
+        run: pip install "httpx>=0.27,<1"
+
+      - name: Run live link check
+        run: python3 scripts/check_links.py --live --max 100
+
+      - name: Upload live link check report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report-live
+          path: catalog/link-check-report.json

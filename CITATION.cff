@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "Arguo"
+type: software
+authors:
+  - alias: "Zynu"
+    website: "https://github.com/izynu"
+  - alias: "Shraddha"
+    website: "https://github.com/xhraddha"
+version: "0.1.0"
+date-released: "2026-10-24"
+license: Apache-2.0
+repository-code: "https://github.com/izynu/arguo"
+abstract: >-
+  Arguo is an open-source research intelligence toolkit with three
+  deliverables: an agent skill that encodes an evidence-first research method,
+  a Python research agent with a traceable evidence ledger, citation auditing,
+  and an explicit insufficient-evidence verdict, and a curated catalog of 1,570
+  research resources across 50 categories plus a static documentation site.
+keywords:
+  - research
+  - evidence
+  - citations
+  - fact-checking
+  - open-source

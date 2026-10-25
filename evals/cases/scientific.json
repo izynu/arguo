@@ -1,0 +1,128 @@
+{
+  "cases": [
+    {
+      "id": "case-036",
+      "question": "What evidence links urban tree canopy to summer surface temperature reductions?",
+      "category": "scientific",
+      "objective": "Mechanism and evidence question with two observation fixtures.",
+      "expected_behavior": "Evidence records separate observation values from study design notes and the report lists limitations.",
+      "fixtures": {
+        "canopy": [
+          {
+            "title": "Example fixture: canopy transect observations",
+            "url": "https://example.org/canopy-transect",
+            "snippet": "Fixture transect study reporting placeholder surface temperature differences across canopy gradients.",
+            "published_at": "2023-08-14"
+          },
+          {
+            "title": "Example fixture: canopy satellite analysis",
+            "url": "https://example.org/canopy-satellite",
+            "snippet": "Fixture satellite analysis reporting placeholder seasonal surface temperature trends for the demonstration city.",
+            "published_at": "2024-01-25"
+          }
+        ]
+      },
+      "notes": "Values are placeholders; methodology notes stay attached to each passage."
+    },
+    {
+      "id": "case-037",
+      "question": "How do observational studies estimate the health effects of fine particulate matter?",
+      "category": "scientific",
+      "objective": "Methods question with one methods fixture.",
+      "expected_behavior": "The plan includes an evidence requirement about study design and the report labels method descriptions as context.",
+      "fixtures": {
+        "particulate": [
+          {
+            "title": "Example fixture: particulate cohort methods",
+            "url": "https://example.org/particulate-methods",
+            "snippet": "Fixture methods section describing placeholder exposure models for a demonstration particulate matter cohort.",
+            "published_at": "2021-12-03"
+          }
+        ]
+      },
+      "notes": "Single fixture keeps corroboration single-source."
+    },
+    {
+      "id": "case-038",
+      "question": "What replication results exist for the demonstration enzyme assay?",
+      "category": "scientific",
+      "objective": "Replication question with conflicting result fixtures.",
+      "expected_behavior": "Both results stay visible with source ids; the report does not average replication outcomes.",
+      "fixtures": {
+        "assay": [
+          {
+            "title": "Example fixture: assay replication attempt one",
+            "url": "https://example.org/assay-replication-one",
+            "snippet": "Fixture lab note reporting a placeholder activity value of 42 units for the demonstration assay.",
+            "published_at": "2022-05-19"
+          },
+          {
+            "title": "Example fixture: assay replication attempt two",
+            "url": "https://example.org/assay-replication-two",
+            "snippet": "Fixture lab note reporting a placeholder activity value of 61 units for the demonstration assay.",
+            "published_at": "2023-06-02"
+          }
+        ]
+      },
+      "notes": "Same host fixtures: cross domain numeric conflict detection will not fire."
+    },
+    {
+      "id": "case-039",
+      "question": "Which mechanisms explain colony collapse in the demonstration bee populations?",
+      "category": "scientific",
+      "objective": "Multi hypothesis question using default fixture content.",
+      "expected_behavior": "Competing hypotheses stay separate claims and the report notes thin corroboration.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-040",
+      "question": "What do controlled trials report about intermittent fasting and glucose control?",
+      "category": "scientific",
+      "objective": "Trial evidence question with two fixtures.",
+      "expected_behavior": "Trial outcomes carry design context and the report distinguishes trial results from commentary.",
+      "fixtures": {
+        "fasting": [
+          {
+            "title": "Example fixture: fasting trial report",
+            "url": "https://example.org/fasting-trial",
+            "snippet": "Fixture trial report with placeholder glucose outcomes for the demonstration intermittent fasting arm.",
+            "published_at": "2023-03-08"
+          },
+          {
+            "title": "Example fixture: fasting trial follow up",
+            "url": "https://example.org/fasting-followup",
+            "snippet": "Fixture follow up note with placeholder twelve month outcomes for the demonstration trial cohort.",
+            "published_at": "2024-03-08"
+          }
+        ]
+      },
+      "notes": "Follow up timing should be visible in the claim rows."
+    },
+    {
+      "id": "case-041",
+      "question": "How is the demonstration telescope mirror coating maintained in humid climates?",
+      "category": "scientific",
+      "objective": "Maintenance practice question with default fixture content.",
+      "expected_behavior": "Practice descriptions are context claims and the report lists what no source covered.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-042",
+      "question": "What sample sizes do seabird population studies in the demonstration archipelago use?",
+      "category": "scientific",
+      "objective": "Study metadata question with one fixture.",
+      "expected_behavior": "Sample sizes are captured with their units and the audit reports no fabricated counts.",
+      "fixtures": {
+        "seabird": [
+          {
+            "title": "Example fixture: seabird survey design",
+            "url": "https://example.org/seabird-survey",
+            "snippet": "Fixture survey design describing placeholder colony counts and plot numbers in the demonstration archipelago.",
+            "published_at": "2020-11-11"
+          }
+        ]
+      },
+      "notes": "Older fixture date exercises recency assessment."
+    }
+  ]
+}

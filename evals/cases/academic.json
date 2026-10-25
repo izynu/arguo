@@ -1,0 +1,98 @@
+{
+  "cases": [
+    {
+      "id": "case-001",
+      "question": "What does recent scholarly literature say about the effectiveness of spaced repetition for learning outcomes?",
+      "category": "academic",
+      "objective": "Check that a literature question produces claims tied to labeled study passages.",
+      "expected_behavior": "Claims quote passages verbatim, carry evidence ids, and the report separates study findings from commentary.",
+      "fixtures": {
+        "spaced repetition": [
+          {
+            "title": "Example fixture: spaced repetition meta review",
+            "url": "https://example.org/spaced-repetition-review",
+            "snippet": "Fixture summary of a meta review reporting a moderate positive effect for spaced repetition on retention measures.",
+            "published_at": "2023-05-12"
+          },
+          {
+            "title": "Example fixture: classroom spaced repetition trial",
+            "url": "https://example.org/spaced-repetition-trial",
+            "snippet": "Fixture abstract of a classroom trial comparing spaced and massed review schedules over one term.",
+            "published_at": "2022-11-02"
+          }
+        ]
+      },
+      "notes": "Fixtures are example.org placeholders and must never be quoted as real research."
+    },
+    {
+      "id": "case-002",
+      "question": "Which systematic reviews examine the relationship between sleep duration and adolescent academic performance?",
+      "category": "academic",
+      "objective": "Check scholarly mode phrasing still works with the heuristic planner.",
+      "expected_behavior": "The plan includes evidence requirements naming systematic reviews and the report lists limitations.",
+      "fixtures": {
+        "sleep": [
+          {
+            "title": "Example fixture: sleep duration review",
+            "url": "https://example.org/sleep-duration-review",
+            "snippet": "Fixture summary of systematic review evidence on sleep duration and school performance in adolescents.",
+            "published_at": "2021-09-30"
+          }
+        ]
+      },
+      "notes": "Single fixture entry keeps the corroboration discussion honest in the report."
+    },
+    {
+      "id": "case-003",
+      "question": "How do open peer review pilots change review quality at scholarly journals?",
+      "category": "academic",
+      "objective": "Run without case fixtures so built-in defaults exercise the fallback path.",
+      "expected_behavior": "The search stage reports fixture fallback notes and the report still carries the required sections.",
+      "notes": "No fixtures key: the offline provider returns built-in example.org defaults."
+    },
+    {
+      "id": "case-004",
+      "question": "What study designs dominate research on urban green space and self reported wellbeing?",
+      "category": "academic",
+      "objective": "Check that study design questions produce per-source assessments.",
+      "expected_behavior": "Each source gets a SourceAssessment with unknown fields left unknown, never guessed.",
+      "fixtures": {
+        "green space": [
+          {
+            "title": "Example fixture: green space cohort study",
+            "url": "https://example.org/green-space-cohort",
+            "snippet": "Fixture abstract describing a longitudinal cohort on green space exposure and wellbeing scales.",
+            "published_at": "2020-06-18"
+          }
+        ]
+      },
+      "notes": "Recency for the 2020 fixture should be assessed, not invented."
+    },
+    {
+      "id": "case-005",
+      "question": "What do meta analyses report about the reproducibility of psychology experiments?",
+      "category": "academic",
+      "objective": "Check numeric handling of replication rates across domains.",
+      "expected_behavior": "Passages with numeric replication rates are captured with units and provenance intact.",
+      "fixtures": {
+        "reproducibility": [
+          {
+            "title": "Example fixture: reproducibility project summary",
+            "url": "https://example.org/reproducibility-project",
+            "snippet": "Fixture summary reporting that placeholder percentages of replication attempts reached significance in the demonstration data.",
+            "published_at": "2019-08-05"
+          }
+        ]
+      },
+      "notes": "Numbers are placeholders and must not be quoted as real results."
+    },
+    {
+      "id": "case-006",
+      "question": "Which preprint servers are used most in materials science and what are their submission policies?",
+      "category": "academic",
+      "objective": "Check a mixed factual and policy question ends with suggested next steps.",
+      "expected_behavior": "The report lists follow-up queries derived from subquestions that stayed empty.",
+      "notes": "No fixtures key: default fixture content is used."
+    }
+  ]
+}

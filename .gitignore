@@ -1,0 +1,73 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.python-version
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Python cache and tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.sqlite
+*.sqlite3
+
+# Runtime output
+runs/
+output/
+evidence-first-cache/
+.eval-cache/
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs
+dev.log
+server.log
+*.log
+
+# Tool results (sandbox artifacts, not part of the project)
+tool-results/
+download/
+
+# Sandbox environment folders (not part of the project)
+skills/
+.zscripts/
+mini-services/
+upload/
+agent-ctx/
+evals/reports/
+
+# Local environment (never commit)
+.env
+
+# Sandbox uploads and downloads
+upload/
+download/
+
+# Sandbox demo code
+examples/websocket/
+

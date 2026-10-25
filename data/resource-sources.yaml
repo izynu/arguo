@@ -1,0 +1,11 @@
+sources:
+  - name: example-open-resource-list
+    type: jsonl-import
+    url: https://example.org/resources.jsonl
+    license_note: unknown, example entry, do not enable
+    enabled: false
+  - name: another-example
+    type: jsonl-import
+    url: https://example.net/resources.jsonl
+    license_note: unknown, example entry, do not enable
+    enabled: false

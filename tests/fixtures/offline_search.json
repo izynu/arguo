@@ -1,0 +1,72 @@
+{
+  "refugee": [
+    {
+      "title": "Example fixture: UNHCR style global displacement overview",
+      "url": "https://example.org/refugee-data",
+      "snippet": "Fixture content about refugee statistics for demonstration. Global forced displacement figures in this fixture are placeholders and must not be quoted as real data.",
+      "published_at": "2024-06-01"
+    },
+    {
+      "title": "Example fixture: refugee camp conditions report",
+      "url": "https://example.net/refugee-camp-report",
+      "snippet": "Fixture passage describing camp water and shelter conditions. The fixture cites a placeholder agency dataset for demonstration purposes.",
+      "published_at": "2023-11-15"
+    }
+  ],
+  "climate": [
+    {
+      "title": "Example fixture: urban heat and tree cover dataset",
+      "url": "https://example.gov/urban-heat-tree-cover",
+      "snippet": "Fixture content pairing city tree canopy percentages with summer surface temperature readings. Values are placeholders for pipeline demonstration.",
+      "published_at": "2024-04-10"
+    },
+    {
+      "title": "Example fixture: climate adaptation spending overview",
+      "url": "https://example.org/climate-adaptation-spending",
+      "snippet": "Fixture passage summarizing adaptation budgets across example cities. All numbers are illustrative fixture values.",
+      "published_at": "2025-02-02"
+    }
+  ],
+  "election": [
+    {
+      "title": "Example fixture: election turnout statistics",
+      "url": "https://example.gov/election-turnout",
+      "snippet": "Fixture content with placeholder turnout percentages for a demonstration election question.",
+      "published_at": "2024-11-06"
+    },
+    {
+      "title": "Example fixture: election results explainer",
+      "url": "https://example.org/election-results-explainer",
+      "snippet": "Fixture explainer passage describing how results are certified in the demonstration dataset.",
+      "published_at": "2024-12-01"
+    }
+  ],
+  "vaccine": [
+    {
+      "title": "Example fixture: vaccine effectiveness overview",
+      "url": "https://example.gov/vaccine-effectiveness",
+      "snippet": "Fixture content with placeholder effectiveness percentages. Two fixture sources deliberately disagree to exercise contradiction handling.",
+      "published_at": "2023-09-09"
+    },
+    {
+      "title": "Example fixture: vaccine safety surveillance note",
+      "url": "https://example.net/vaccine-safety",
+      "snippet": "Fixture passage describing safety surveillance with placeholder event rates for demonstration.",
+      "published_at": "2023-10-10"
+    }
+  ],
+  "interest rate": [
+    {
+      "title": "Example fixture: central bank interest rate decision",
+      "url": "https://example.org/interest-rate-decision",
+      "snippet": "Fixture passage announcing a placeholder policy rate change for the demonstration economy.",
+      "published_at": "2025-01-15"
+    },
+    {
+      "title": "Example fixture: interest rate market reaction",
+      "url": "https://example.net/interest-rate-markets",
+      "snippet": "Fixture passage describing placeholder market reactions after the demonstration rate decision.",
+      "published_at": "2025-01-16"
+    }
+  ]
+}

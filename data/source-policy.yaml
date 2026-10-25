@@ -1,0 +1,14 @@
+# Source policy for Arguo resource ingestion and sync.
+#
+# These keys are the source of truth for how external resources may enter
+# the catalog. scripts/sync_resources.py enforces the fetch and validation
+# rules, and the contributing checklist in docs/resource-library/ restates
+# them for reviewers.
+
+primary_rule: "Official and standards-based APIs preferred over scraping"
+robots: "Respect robots.txt and published terms"
+rate_limits: "Polite defaults: timeout 15s, sequential fetches, opt-in only"
+provenance: "Every imported record records its source and import date"
+copyrighted_content: "Store metadata only, never redistribute third-party content"
+licenses: "License recorded per record or the literal string unknown"
+fabrication: "Never fabricate records to increase counts"

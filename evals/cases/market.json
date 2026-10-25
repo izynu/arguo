@@ -1,0 +1,128 @@
+{
+  "cases": [
+    {
+      "id": "case-029",
+      "question": "How did the demonstration central bank interest rate decision move bond yields?",
+      "category": "market",
+      "objective": "Event reaction question with two dated fixtures.",
+      "expected_behavior": "Claims tie the rate decision and the yield reaction to separate sources with dates.",
+      "fixtures": {
+        "interest rate": [
+          {
+            "title": "Example fixture: central bank decision note",
+            "url": "https://example.org/central-bank-decision",
+            "snippet": "Fixture note announcing a placeholder policy rate change for the demonstration economy.",
+            "published_at": "2025-01-15"
+          },
+          {
+            "title": "Example fixture: bond market reaction summary",
+            "url": "https://example.org/bond-reaction",
+            "snippet": "Fixture summary describing placeholder yield moves after the demonstration rate decision.",
+            "published_at": "2025-01-16"
+          }
+        ]
+      },
+      "notes": "Fixture numbers are placeholders and must not be quoted as real market data."
+    },
+    {
+      "id": "case-030",
+      "question": "What are the main revenue segments reported by the demonstration software company?",
+      "category": "market",
+      "objective": "Segment breakdown with numeric fixtures.",
+      "expected_behavior": "Segment numbers keep their units and reporting period in the claim table.",
+      "fixtures": {
+        "revenue": [
+          {
+            "title": "Example fixture: annual report segment note",
+            "url": "https://example.org/annual-segments",
+            "snippet": "Fixture note listing placeholder subscription and services revenue for the demonstration company.",
+            "published_at": "2025-03-30"
+          },
+          {
+            "title": "Example fixture: investor deck summary",
+            "url": "https://example.org/investor-deck",
+            "snippet": "Fixture deck summary restating placeholder segment shares for the demonstration company.",
+            "published_at": "2025-04-02"
+          }
+        ]
+      },
+      "notes": "Two same domain fixtures exercise corroboration labeling as syndicated or repeated."
+    },
+    {
+      "id": "case-031",
+      "question": "Which factors drive housing prices in the demonstration metro area?",
+      "category": "market",
+      "objective": "Drivers question using default fixture content.",
+      "expected_behavior": "Causal claims are labeled as interpretations and the report lists unanswered questions.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-032",
+      "question": "How concentrated is the demonstration grocery retail market according to regulators?",
+      "category": "market",
+      "objective": "Regulator sourced concentration figure.",
+      "expected_behavior": "The report names the regulator as the source and keeps the concentration measure defined.",
+      "fixtures": {
+        "concentration": [
+          {
+            "title": "Example fixture: competition authority market study",
+            "url": "https://example.org/market-study",
+            "snippet": "Fixture market study with a placeholder concentration ratio for the demonstration grocery sector.",
+            "published_at": "2024-10-09"
+          }
+        ]
+      },
+      "notes": "Single source: corroboration must read single-source."
+    },
+    {
+      "id": "case-033",
+      "question": "What did the demonstration exchange say about the new listing rules?",
+      "category": "market",
+      "objective": "Institutional statement question with one fixture.",
+      "expected_behavior": "The statement is quoted verbatim with retrieval provenance and no paraphrased additions.",
+      "fixtures": {
+        "listing": [
+          {
+            "title": "Example fixture: exchange listing rules notice",
+            "url": "https://example.org/listing-rules-notice",
+            "snippet": "Fixture notice summarizing placeholder changes to the demonstration exchange listing rules.",
+            "published_at": "2025-05-20"
+          }
+        ]
+      },
+      "notes": "Fixture notice is fictional and labeled."
+    },
+    {
+      "id": "case-034",
+      "question": "How do analysts value the demonstration airline fleet renewal plan?",
+      "category": "market",
+      "objective": "Analyst commentary question with default fixture content.",
+      "expected_behavior": "Opinion content is attributed and the report avoids presenting valuations as facts.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-035",
+      "question": "What commodity price swings affected the demonstration fertilizer market?",
+      "category": "market",
+      "objective": "Price movement question with two fixtures from different periods.",
+      "expected_behavior": "Percentages keep their period context and the report notes any period mismatch.",
+      "fixtures": {
+        "fertilizer": [
+          {
+            "title": "Example fixture: fertilizer price review",
+            "url": "https://example.org/fertilizer-review",
+            "snippet": "Fixture review describing placeholder price swings of 18 percent in the demonstration fertilizer market.",
+            "published_at": "2022-09-01"
+          },
+          {
+            "title": "Example fixture: fertilizer trade update",
+            "url": "https://example.org/fertilizer-update",
+            "snippet": "Fixture update describing placeholder price swings of 7 percent in the demonstration fertilizer market.",
+            "published_at": "2025-02-11"
+          }
+        ]
+      },
+      "notes": "Different periods must not be merged into one number."
+    }
+  ]
+}

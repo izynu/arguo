@@ -1,0 +1,128 @@
+{
+  "cases": [
+    {
+      "id": "case-022",
+      "question": "When did the demonstration treaty enter into force and which parties signed first?",
+      "category": "historical",
+      "objective": "Two part historical question with dated fixtures.",
+      "expected_behavior": "Dates stay tied to fixture provenance and unknown dates remain unknown.",
+      "fixtures": {
+        "treaty": [
+          {
+            "title": "Example fixture: treaty text archive",
+            "url": "https://example.org/treaty-text",
+            "snippet": "Fixture archive page with placeholder signature and entry into force dates for the demonstration treaty.",
+            "published_at": "1919-06-28"
+          },
+          {
+            "title": "Example fixture: treaty ratification list",
+            "url": "https://example.org/treaty-ratification",
+            "snippet": "Fixture list of placeholder ratification order for the demonstration treaty parties.",
+            "published_at": "1920-01-10"
+          }
+        ]
+      },
+      "notes": "Fixture dates describe the documents, not necessarily the events."
+    },
+    {
+      "id": "case-023",
+      "question": "What primary sources document the construction of the demonstration canal?",
+      "category": "historical",
+      "objective": "Primary source identification for an infrastructure project.",
+      "expected_behavior": "The report distinguishes primary documents from later commentary in the source comparison.",
+      "fixtures": {
+        "canal": [
+          {
+            "title": "Example fixture: canal construction records",
+            "url": "https://example.org/canal-records",
+            "snippet": "Fixture inventory of placeholder engineering reports and correspondence about the demonstration canal.",
+            "published_at": "1885-03-01"
+          }
+        ]
+      },
+      "notes": "Single fixture keeps the corroboration claim honest."
+    },
+    {
+      "id": "case-024",
+      "question": "How did contemporaries describe the 1906 demonstration earthquake?",
+      "category": "historical",
+      "objective": "Event reconstruction from period accounts.",
+      "expected_behavior": "Passages from period accounts are quoted verbatim with their publication metadata.",
+      "fixtures": {
+        "earthquake": [
+          {
+            "title": "Example fixture: earthquake dispatch",
+            "url": "https://example.org/earthquake-dispatch",
+            "snippet": "Fixture newspaper dispatch with placeholder damage descriptions from the demonstration earthquake.",
+            "published_at": "1906-04-20"
+          },
+          {
+            "title": "Example fixture: earthquake diary excerpt",
+            "url": "https://example.org/earthquake-diary",
+            "snippet": "Fixture diary excerpt describing personal observations during the demonstration earthquake.",
+            "published_at": "1906-05-02"
+          }
+        ]
+      },
+      "notes": "Very old dates must never be modernized by the pipeline."
+    },
+    {
+      "id": "case-025",
+      "question": "What role did the demonstration printing press play in spreading pamphlets?",
+      "category": "historical",
+      "objective": "Interpretive history question with default fixture content.",
+      "expected_behavior": "Interpretations are labeled as interpretations, not facts, in the claim table.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-026",
+      "question": "Which censuses cover the demonstration province between 1850 and 1950?",
+      "category": "historical",
+      "objective": "Coverage enumeration across a bounded period.",
+      "expected_behavior": "The plan records the time boundary and the report states which periods lack coverage.",
+      "fixtures": {
+        "census": [
+          {
+            "title": "Example fixture: province census inventory",
+            "url": "https://example.org/province-census",
+            "snippet": "Fixture inventory listing placeholder census years and surviving volumes for the demonstration province.",
+            "published_at": "1952-07-01"
+          }
+        ]
+      },
+      "notes": "The inventory date is later than the covered period by design."
+    },
+    {
+      "id": "case-027",
+      "question": "What do surviving letters reveal about trade routes in the demonstration archive?",
+      "category": "historical",
+      "objective": "Archival synthesis question without fixtures.",
+      "expected_behavior": "The report separates what letters say from what archivists infer.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-028",
+      "question": "How reliable are the demonstration chronicle dates for the 12th century succession?",
+      "category": "historical",
+      "objective": "Conflicting historical dates across two chronicle fixtures.",
+      "expected_behavior": "Both dates stay visible with their source ids and the report states that reliability cannot be settled automatically; the numeric contradiction scan only compares across distinct registrable domains, which same host fixtures do not provide.",
+      "fixtures": {
+        "chronicle": [
+          {
+            "title": "Example fixture: chronicle manuscript A",
+            "url": "https://example.org/chronicle-a",
+            "snippet": "Fixture manuscript entry dating the demonstration succession to 1187 with a placeholder scribe note.",
+            "published_at": "1187-11-01"
+          },
+          {
+            "title": "Example fixture: chronicle manuscript B",
+            "url": "https://example.org/chronicle-b",
+            "snippet": "Fixture manuscript entry dating the demonstration succession to 1191 with a placeholder marginal note.",
+            "published_at": "1191-11-01"
+          }
+        ]
+      },
+      "notes": "Both urls stay on example.org per eval fixture policy; unit mismatch (years versus dates) must not create a false conflict."
+    }
+  ]
+}

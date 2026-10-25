@@ -1,0 +1,150 @@
+{
+  "cases": [
+    {
+      "id": "case-050",
+      "question": "What are the latest interest rate decisions in the demonstration economy?",
+      "category": "time-sensitive",
+      "objective": "Recency question with two dated fixtures.",
+      "expected_behavior": "The report states the decision date and warns that offline fixture content is not live data.",
+      "fixtures": {
+        "interest rate": [
+          {
+            "title": "Example fixture: rate decision announcement",
+            "url": "https://example.org/rate-decision",
+            "snippet": "Fixture announcement with a placeholder policy rate change for the demonstration economy.",
+            "published_at": "2026-09-17"
+          },
+          {
+            "title": "Example fixture: rate press conference summary",
+            "url": "https://example.org/rate-press-conference",
+            "snippet": "Fixture summary of placeholder guidance given after the demonstration rate decision.",
+            "published_at": "2026-09-17"
+          }
+        ]
+      },
+      "notes": "Same day fixtures exercise multi source corroboration labeling."
+    },
+    {
+      "id": "case-051",
+      "question": "Which election results were certified most recently in the demonstration district?",
+      "category": "time-sensitive",
+      "objective": "Certification status question with two fixtures.",
+      "expected_behavior": "Claims distinguish announced results from certified results and cite each.",
+      "fixtures": {
+        "election": [
+          {
+            "title": "Example fixture: election night tally",
+            "url": "https://example.org/election-night-tally",
+            "snippet": "Fixture tally with placeholder vote shares for the demonstration district race.",
+            "published_at": "2026-11-04"
+          },
+          {
+            "title": "Example fixture: certification notice",
+            "url": "https://example.org/certification-notice",
+            "snippet": "Fixture notice describing placeholder certification steps for the demonstration district results.",
+            "published_at": "2026-11-20"
+          }
+        ]
+      },
+      "notes": "Fixture dates describe a demonstration calendar."
+    },
+    {
+      "id": "case-052",
+      "question": "What is the current status of the demonstration wildfire containment?",
+      "category": "time-sensitive",
+      "objective": "Fast changing situation with a stale and a fresh fixture.",
+      "expected_behavior": "The report prefers the fresh update for current status, keeps the stale one dated, and says the picture may have changed since retrieval.",
+      "fixtures": {
+        "wildfire": [
+          {
+            "title": "Example fixture: wildfire morning update",
+            "url": "https://example.org/wildfire-morning",
+            "snippet": "Fixture update with placeholder containment percentages for the demonstration fire.",
+            "published_at": "2026-10-23"
+          },
+          {
+            "title": "Example fixture: wildfire stale report",
+            "url": "https://example.org/wildfire-stale",
+            "snippet": "Fixture report with placeholder containment percentages from the start of the demonstration incident.",
+            "published_at": "2026-10-01"
+          }
+        ]
+      },
+      "notes": "Staleness must be visible, not hidden."
+    },
+    {
+      "id": "case-053",
+      "question": "Which vaccine recommendations changed in the demonstration immunization schedule this year?",
+      "category": "time-sensitive",
+      "objective": "Guidance change question with two fixtures.",
+      "expected_behavior": "Changes are stated as differences between dated sources and the report lists the change dates.",
+      "fixtures": {
+        "vaccine": [
+          {
+            "title": "Example fixture: immunization schedule revision",
+            "url": "https://example.org/schedule-revision",
+            "snippet": "Fixture revision note listing placeholder schedule changes adopted by the demonstration committee.",
+            "published_at": "2026-02-12"
+          },
+          {
+            "title": "Example fixture: immunization practice note",
+            "url": "https://example.org/practice-note",
+            "snippet": "Fixture practice note describing how placeholder schedule changes are applied in demonstration clinics.",
+            "published_at": "2026-03-05"
+          }
+        ]
+      },
+      "notes": "Health adjacent content stays clearly fixture labeled."
+    },
+    {
+      "id": "case-054",
+      "question": "What are the most recent refugee resettlement numbers for the demonstration program?",
+      "category": "time-sensitive",
+      "objective": "Latest figures question with two dated fixtures.",
+      "expected_behavior": "The newer figure is used for the current claim and the older one stays as history with its date.",
+      "fixtures": {
+        "refugee": [
+          {
+            "title": "Example fixture: resettlement quarterly figures",
+            "url": "https://example.org/resettlement-quarterly",
+            "snippet": "Fixture quarterly release with placeholder resettlement arrivals for the demonstration program.",
+            "published_at": "2026-07-15"
+          },
+          {
+            "title": "Example fixture: resettlement annual review",
+            "url": "https://example.org/resettlement-annual",
+            "snippet": "Fixture annual review with placeholder yearly resettlement totals for the demonstration program.",
+            "published_at": "2026-01-31"
+          }
+        ]
+      },
+      "notes": "Quarterly and annual periods must stay separated."
+    },
+    {
+      "id": "case-055",
+      "question": "Which demonstrations and counterprotests are scheduled in the capital this week?",
+      "category": "time-sensitive",
+      "objective": "Schedule question without fixtures to test honest insufficiency.",
+      "expected_behavior": "The report says the evidence base is inadequate for a schedule and suggests follow up queries instead of inventing events.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-056",
+      "question": "What did the demonstration weather service say about the incoming storm?",
+      "category": "time-sensitive",
+      "objective": "Single advisory fixture with a near current date.",
+      "expected_behavior": "The advisory is quoted with its issue time and the report warns that forecasts change.",
+      "fixtures": {
+        "storm": [
+          {
+            "title": "Example fixture: storm advisory bulletin",
+            "url": "https://example.org/storm-advisory",
+            "snippet": "Fixture bulletin with placeholder wind and rainfall guidance for the demonstration storm.",
+            "published_at": "2026-10-22"
+          }
+        ]
+      },
+      "notes": "Advisory content is fictional and labeled."
+    }
+  ]
+}

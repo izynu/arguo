@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-25",
+  "catalog_records": 1570,
+  "catalog_categories": 50,
+  "regions": 82,
+  "docs_pages": 81,
+  "eval_cases": 56,
+  "pipeline_stages": 10,
+  "verification_status": {
+    "documented": 1420,
+    "verified": 150
+  },
+  "access_modes": {
+    "free-registration": 95,
+    "mixed": 52,
+    "open": 1358,
+    "paid": 20,
+    "partial-open": 45
+  },
+  "api_available": 369,
+  "top_regions": {
+    "global": 700,
+    "United States": 315,
+    "United Kingdom": 90,
+    "Europe": 37,
+    "Germany": 32,
+    "Canada": 27,
+    "Australia": 24,
+    "France": 23
+  }
+}

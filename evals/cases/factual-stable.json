@@ -1,0 +1,86 @@
+{
+  "cases": [
+    {
+      "id": "case-015",
+      "question": "What is the standard definition of a leap year in the Gregorian calendar?",
+      "category": "factual",
+      "objective": "Stable fact retrieval with default fixture content.",
+      "expected_behavior": "The report separates the definitional claim from its source and lists limitations.",
+      "notes": "No fixtures key: built-in example.org defaults are used."
+    },
+    {
+      "id": "case-016",
+      "question": "Which elements make up water and what is their ratio by atoms?",
+      "category": "factual",
+      "objective": "A stable chemistry fact with a numeric ratio.",
+      "expected_behavior": "Numeric content stays tied to passage provenance and units are preserved.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-017",
+      "question": "What units does the SI system use for mass, length, and time?",
+      "category": "factual",
+      "objective": "Multi part stable fact in one question.",
+      "expected_behavior": "The heuristic plan splits the question into subquestions and the table lists one row per claim.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-018",
+      "question": "What does the demonstration encyclopedia say about the stages of the water cycle?",
+      "category": "factual",
+      "objective": "Reference style source with fixture data.",
+      "expected_behavior": "Claims quote the fixture passages verbatim and mark offline fixture provenance.",
+      "fixtures": {
+        "water cycle": [
+          {
+            "title": "Example fixture: water cycle overview",
+            "url": "https://example.org/water-cycle-overview",
+            "snippet": "Fixture overview describing evaporation, condensation, and precipitation stages in the demonstration encyclopedia.",
+            "published_at": "2021-04-01"
+          },
+          {
+            "title": "Example fixture: water cycle diagram notes",
+            "url": "https://example.org/water-cycle-diagram",
+            "snippet": "Fixture notes explaining the demonstration diagram labels for collection and runoff stages.",
+            "published_at": "2021-04-01"
+          }
+        ]
+      },
+      "notes": "Same publication date on both fixtures is intentional."
+    },
+    {
+      "id": "case-019",
+      "question": "What are the primary colors in the RGB color model?",
+      "category": "factual",
+      "objective": "A trivial stable fact to confirm the pipeline does not overstate confidence.",
+      "expected_behavior": "Confidence labels come from corroboration counts, not from how simple the question is.",
+      "notes": "No fixtures key."
+    },
+    {
+      "id": "case-020",
+      "question": "Which organization maintains the demonstration style guide and when was it founded?",
+      "category": "factual",
+      "objective": "Single source organizational fact with a date.",
+      "expected_behavior": "Single source corroboration is labeled as such and the audit lists the source once.",
+      "fixtures": {
+        "style guide": [
+          {
+            "title": "Example fixture: style guide history page",
+            "url": "https://example.org/style-guide-history",
+            "snippet": "Fixture history page with placeholder founding details for the demonstration style guide body.",
+            "published_at": "2018-01-15"
+          }
+        ]
+      },
+      "notes": "Placeholder founding details must stay clearly fixture labeled."
+    },
+    {
+      "id": "case-021",
+      "question": "What is the boiling point of water at standard sea level pressure?",
+      "category": "factual",
+      "objective": "Numeric stable fact with units.",
+      "expected_behavior": "The value appears in a claim row with its unit and source id.",
+      "notes": "No fixtures key."
+    }
+  ]
+}

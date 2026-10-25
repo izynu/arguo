@@ -1,0 +1,9 @@
+# Arguo crawler policy.
+# This file documents crawler policy for the repository and docs site. When the
+# site is deployed, serve an equivalent file at the site root.
+# TODO(izynu): replace YOUR-DOMAIN with the deployed domain and uncomment the
+# Sitemap line once a sitemap exists.
+User-agent: *
+Allow: /
+
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml

@@ -1,0 +1,108 @@
+# Arguo
+
+An open research intelligence toolkit: an evidence ledger, citation auditing, and a curated resource catalog. This file lists the documentation pages with their repo-relative paths.
+
+## core-concepts
+
+- System Overview: The four parts of Arguo and how data flows between them during a research run. (docs/core-concepts/cc-overview.md)
+- Architecture: Package layout of arguo, module by module, with each responsibility. (docs/core-concepts/cc-architecture.md)
+- The Research Workflow: The ten pipeline stages A to J, what each consumes, and what each produces. (docs/core-concepts/cc-workflow.md)
+- Research Plans: The ResearchPlan schema, heuristic versus model planning, and the honest limits of both. (docs/core-concepts/cc-research-plans.md)
+- Search and Retrieval: The provider interface, normalized results, deduplication rules, retry behavior, and fetch caching. (docs/core-concepts/cc-search-retrieval.md)
+- The evidence ledger: Every EvidenceRecord field, why explicit nulls matter, and the ledger JSON shape. (docs/core-concepts/cc-evidence-ledger.md)
+- Claims, Sources, and Provenance: ClaimRecord and SourceRecord fields, the S/E/C id scheme, provenance, and retrieval timestamps. (docs/core-concepts/cc-claims-sources-provenance.md)
+- Primary, Secondary, and Tertiary Sources: Definitions of the three source tiers, when each is appropriate, and how the toolkit records source_type. (docs/core-concepts/cc-primary-secondary.md)
+- Source Quality Rubric: The SourceAssessment fields, how the rule based assessor works, and why there are no numeric trust scores. (docs/core-concepts/cc-source-quality.md)
+- Corroboration and Independence: How independence groups, syndication detection, and corroboration groups separate real confirmation from repetition. (docs/core-concepts/cc-corroboration.md)
+- Contradictions: How the toolkit detects numeric contradictions, where a model assisted scan fits, and how conflicts are resolved. (docs/core-concepts/cc-contradictions.md)
+- Citation Verification: The citation checker's rules, the verdict vocabulary, and what automated checking can and cannot establish. (docs/core-concepts/cc-citation-verification.md)
+- Dates: Publication, event, and retrieval dates, explicit unknown handling, and why nothing is guessed. (docs/core-concepts/cc-dates.md)
+- Uncertainty: Qualitative confidence with reasons, no invented percentages, and insufficiency as a legitimate outcome. (docs/core-concepts/cc-uncertainty.md)
+- Budgets and Profiles: The ResearchBudget fields, how BudgetTracker enforces them, and how profiles differ. (docs/core-concepts/cc-budgets-profiles.md)
+- Caching: The ResponseCache file format, TTL, the cache clear command, fetch cache keys, and reproducibility notes. (docs/core-concepts/cc-caching.md)
+
+## developer-guide
+
+- Development Setup: How to install the toolkit for development, build the catalog, run validators, tests, and lint. (docs/developer-guide/dg-setup.md)
+- CLI Reference: Every arguo command, option, default, and exit code, taken from the Typer application in cli.py. (docs/developer-guide/dg-cli-reference.md)
+- Python API Reference: The key public functions and classes of arguo with their real signatures. (docs/developer-guide/dg-python-api.md)
+- Data Models Reference: Field tables for the Pydantic models shared across the research pipeline. (docs/developer-guide/dg-data-models.md)
+- Providers and Model Adapters: The SearchProvider and ModelAdapter contracts, the built-in Tavily and OpenAI-compatible implementations, and how to add your own. (docs/developer-guide/dg-providers.md)
+- Orchestration Internals: How ResearchOrchestrator runs stages A to J, records StageResults, enforces budgets, and degrades on model failures. (docs/developer-guide/dg-orchestration.md)
+- Output Schemas: The six artifacts a research run writes, their fields, and small JSON examples. (docs/developer-guide/dg-output-schemas.md)
+- Configuration Reference: Settings fields, environment variables, budgets, and the built-in research profiles. (docs/developer-guide/dg-config-reference.md)
+- Errors and Logging: The typed exception hierarchy with exit codes, structured logging setup, and secret redaction. (docs/developer-guide/dg-errors-logging.md)
+- Extending the Pipeline: How to add stages, providers, and versioned prompts while keeping the toolkit contracts stable. (docs/developer-guide/dg-extending.md)
+- Testing Guide: How the test suite is organized, how the offline search fixtures work, and how to run subsets offline. (docs/developer-guide/dg-testing.md)
+- Contributing Code: Setup for contributors, branch naming, commit style, the pull request checklist, and what reviewers look for. (docs/developer-guide/dg-contributing-code.md)
+
+## getting-started
+
+- Introduction: What Arguo is, what it ships, who it is for, and what it honestly does not do. (docs/getting-started/gs-introduction.md)
+- Installation: Prerequisites, clone and install steps, verification commands, and optional API key setup. (docs/getting-started/gs-installation.md)
+- Quickstart: A five minute path from install to a complete run, offline first, then a live run with real providers. (docs/getting-started/gs-quickstart.md)
+- Your First Research Run: A stage by stage walkthrough of one offline run, the files it produces, and how to read them. (docs/getting-started/gs-first-research.md)
+- CLI Tutorial: A tour of every arguo command group, research flags, and the exit code table. (docs/getting-started/gs-cli-tutorial.md)
+- Python Tutorial: Using settings, profiles, the orchestrator, and the EvidenceLedger class directly from Python. (docs/getting-started/gs-python-tutorial.md)
+- Configuration: How settings resolve from environment variables, what each ARGUO variable does, and what each profile changes. (docs/getting-started/gs-configuration.md)
+- Environment Variables: Complete reference for every environment variable Arguo reads and how secrets are protected. (docs/getting-started/gs-environment-variables.md)
+- Troubleshooting: Common failure symptoms, their causes, and the exact fix for each. (docs/getting-started/gs-troubleshooting.md)
+- FAQ: Straight answers about guarantees, costs, data storage, extensibility, and contribution. (docs/getting-started/gs-faq.md)
+
+## handbook
+
+- General research workflow: The core Arguo workflow for factual questions, from scoping to verdicts, with profiles and a worked command. (docs/handbook/hb-general.md)
+- Academic and literature research: Using scholarly query variants, review registries, and study quality checks for literature oriented research. (docs/handbook/hb-academic.md)
+- Software and standards research: Researching software, versions, and standards with official documentation, changelogs, and security advisories first. (docs/handbook/hb-technical.md)
+- Company and market research: Grounding company and market claims in filings, official market data, and corroboration across independent domains. (docs/handbook/hb-market.md)
+- Historical research: Working with archives and digitized newspapers while keeping event dates, publication dates, and interpretations separate. (docs/handbook/hb-historical.md)
+- Policy and regulatory research: Reading legislation and regulation from official portals, using the official_source flag, and separating legal text from commentary. (docs/handbook/hb-policy.md)
+- Verifying numbers: Checking units, denominators, and time windows, using contradiction analysis, and reporting precision honestly. (docs/handbook/hb-quantitative.md)
+- Fact-checking workflow: Extracting claims, applying the verdict vocabulary, and keeping the evidence ledger as the audit trail. (docs/handbook/hb-fact-checking.md)
+- Reporting standards: The fifteen required report elements, the S and E citation identifiers, and what the audit summary covers. (docs/handbook/hb-reporting.md)
+- Research quality checklist: Fifteen checks to run before a research result is called finished. (docs/handbook/hb-checklist.md)
+
+## project
+
+- About Arguo: Why the project exists, what is built today, what is not, and the design principles it follows. (docs/project/pj-about.md)
+- Roadmap: What is implemented, what is in progress, and what is planned in Arguo, with no dates promised. (docs/project/pj-roadmap.md)
+- Changelog: Notable changes to Arguo, starting with the 0.1.0 initial release. (docs/project/pj-changelog.md)
+- Governance: How Arguo makes decisions, adds maintainers, and keeps its work transparent. (docs/project/pj-governance.md)
+- Code of Conduct: A condensed code of conduct for all Arguo project spaces, including scope, reporting, and enforcement. (docs/project/pj-code-of-conduct.md)
+- License: Arguo code is Apache-2.0, with separate practical notes for catalog data and third-party marks. (docs/project/pj-license.md)
+- Security Policy: How to report vulnerabilities in Arguo privately, what is in scope, what is not, and what response to expect. (docs/project/pj-security-policy.md)
+- Support: Where to ask questions about Arguo, how to report bugs well, and what response times to expect. (docs/project/pj-support.md)
+- Citing Arguo: How to cite the Arguo repository in academic work, with a BibTeX entry and a pointer to CITATION.cff. (docs/project/pj-citation.md)
+- Publishing Checklist: A numbered launch checklist for the repository owner, from repo creation to final checks. (docs/project/pj-publishing.md)
+
+## quality-safety
+
+- Evaluation Philosophy: How Arguo evaluates itself, what the offline runner can and cannot measure, and why no score is published without a real run behind it. (docs/quality-safety/qs-evaluation.md)
+- Benchmark Cases: The planned benchmark case mix for Arguo, the case file format, how cases are run, and how new cases are added. (docs/quality-safety/qs-benchmarks.md)
+- Citation Metrics: Precise definitions, formulas, and limitations of the citation quality metrics computed or judged in Arguo. (docs/quality-safety/qs-citation-precision.md)
+- Prompt Injection Defense: The threat model, delimiter wrapping, and the seven detection heuristics that keep retrieved web content acting as data inside Arguo. (docs/quality-safety/qs-prompt-injection.md)
+- SSRF Defenses: What the URL guard and fetcher block before any network request, and the residual risks that remain, documented plainly. (docs/quality-safety/qs-ssrf.md)
+- Secrets and Privacy: How Arguo handles credentials, what it stores locally, and why it sends nothing anywhere except provider calls. (docs/quality-safety/qs-secrets-privacy.md)
+- High-Stakes Limitations: Why Arguo output is an aid for medical, legal, financial, and safety questions, never an authority, and what human review it requires. (docs/quality-safety/qs-high-stakes.md)
+
+## resource-library
+
+- Browsing the resource catalog: How to search, list, and inspect the resource catalog with the resources commands and the website explorer. (docs/resource-library/rl-browse.md)
+- The category taxonomy: The 50 category keys of the resource catalog, grouped in a compact table showing what belongs where. (docs/resource-library/rl-categories.md)
+- Academic discovery spotlight: Ten flagship scholarly discovery resources in the catalog and what each is best for. (docs/resource-library/rl-academic.md)
+- Government statistics and economics spotlight: Twelve official statistical and economic data resources in the catalog, one line each. (docs/resource-library/rl-government-economics.md)
+- Biomedical and health spotlight: Nine biomedical literature, trial registry, and evidence synthesis resources, with a note on evidence hierarchies. (docs/resource-library/rl-health.md)
+- Climate and environment spotlight: Nine climate, ecology, and environment data resources in the catalog, one line each. (docs/resource-library/rl-environment.md)
+- Software, standards, and law spotlight: Eleven resources for packages, documentation, vulnerabilities, and legal texts, one line each. (docs/resource-library/rl-software-legal.md)
+- Archives, news, and fact-checking spotlight: Eleven archive, newspaper, investigative, and fact-checking resources in the catalog, one line each. (docs/resource-library/rl-archives-news.md)
+- Verification statuses and licensing: What documented, verified, community-submitted, and deprecated mean, and how license fields handle unknowns. (docs/resource-library/rl-quality-licensing.md)
+- Contributing a resource: How to add a catalog record: schema rules, pull request steps, validation, and review criteria. (docs/resource-library/rl-contributing.md)
+- The sync pipeline: How resource-sources.yaml and sync_resources.py keep catalog changes deliberate, safe, and reproducible. (docs/resource-library/rl-sync.md)
+
+## skill-guide
+
+- Arguo Skill Overview: What the arguo Agent Skill is, what it does, and when an agent should load it. (docs/skill-guide/sk-overview.md)
+- Installing the Skill: Where to copy the arguo skill folder, how to verify it, and sample invocations. (docs/skill-guide/sk-installing.md)
+- Skill Package Contents: The structure of SKILL.md, the 20 reference files and when each is loaded, templates, and examples. (docs/skill-guide/sk-contents.md)
+- Customizing the Skill: How to adapt the arguo skill for a domain, keep SKILL.md small, and what must not change. (docs/skill-guide/sk-customizing.md)
+- Skill Troubleshooting: Fixes for a skill that will not activate, missing references, validator failures, and style rule violations. (docs/skill-guide/sk-troubleshooting.md)

@@ -1,0 +1,138 @@
+{
+  "cases": [
+    {
+      "id": "case-043",
+      "question": "What was the demonstration country unemployment rate in the latest statistical release?",
+      "category": "statistics",
+      "objective": "Latest value question with an old and a new fixture.",
+      "expected_behavior": "The report uses the newer release for the current value and keeps the older one as context with its date.",
+      "fixtures": {
+        "unemployment": [
+          {
+            "title": "Example fixture: unemployment release archive",
+            "url": "https://example.org/unemployment-archive",
+            "snippet": "Fixture release describing a placeholder unemployment rate for the demonstration country in an older year.",
+            "published_at": "2019-07-01"
+          },
+          {
+            "title": "Example fixture: unemployment release latest",
+            "url": "https://example.org/unemployment-latest",
+            "snippet": "Fixture release describing a placeholder unemployment rate for the demonstration country in the latest quarter.",
+            "published_at": "2026-09-30"
+          }
+        ]
+      },
+      "notes": "Values are placeholders; the release dates drive recency."
+    },
+    {
+      "id": "case-044",
+      "question": "How does the demonstration statistics office adjust inflation for housing costs?",
+      "category": "statistics",
+      "objective": "Methodology question about a statistical agency.",
+      "expected_behavior": "Method descriptions stay context claims and the report names the agency.",
+      "fixtures": {
+        "inflation": [
+          {
+            "title": "Example fixture: inflation methods paper",
+            "url": "https://example.org/inflation-methods",
+            "snippet": "Fixture methods paper describing placeholder shelter cost weights in the demonstration inflation basket.",
+            "published_at": "2024-02-14"
+          }
+        ]
+      },
+      "notes": "Single fixture."
+    },
+    {
+      "id": "case-045",
+      "question": "Which census tables cover median household income in the demonstration region?",
+      "category": "statistics",
+      "objective": "Table discovery question with one inventory fixture.",
+      "expected_behavior": "The report lists the named tables and flags coverage the fixtures did not mention.",
+      "fixtures": {
+        "census": [
+          {
+            "title": "Example fixture: income table inventory",
+            "url": "https://example.org/income-tables",
+            "snippet": "Fixture inventory listing placeholder table identifiers for household income in the demonstration region.",
+            "published_at": "2025-08-19"
+          }
+        ]
+      },
+      "notes": "Table identifiers are placeholders."
+    },
+    {
+      "id": "case-046",
+      "question": "What share of the demonstration grid electricity came from wind in the energy balance?",
+      "category": "statistics",
+      "objective": "Share question with two conflicting period fixtures.",
+      "expected_behavior": "Each share stays tied to its period and the report does not blend periods.",
+      "fixtures": {
+        "wind": [
+          {
+            "title": "Example fixture: energy balance wind share",
+            "url": "https://example.org/wind-share-2022",
+            "snippet": "Fixture energy balance with a placeholder wind share of 21 percent for the demonstration grid in 2022.",
+            "published_at": "2023-06-30"
+          },
+          {
+            "title": "Example fixture: energy balance wind share update",
+            "url": "https://example.org/wind-share-2025",
+            "snippet": "Fixture energy balance with a placeholder wind share of 27 percent for the demonstration grid in 2025.",
+            "published_at": "2026-03-31"
+          }
+        ]
+      },
+      "notes": "Both urls stay on example.org per eval fixture policy."
+    },
+    {
+      "id": "case-047",
+      "question": "How many hospital beds per thousand people does the demonstration health report list?",
+      "category": "statistics",
+      "objective": "Per capita indicator question with one fixture.",
+      "expected_behavior": "The rate keeps its denominator and reference year in the claim row.",
+      "fixtures": {
+        "hospital": [
+          {
+            "title": "Example fixture: health system capacity report",
+            "url": "https://example.org/hospital-capacity",
+            "snippet": "Fixture report with a placeholder bed count per thousand people for the demonstration health system.",
+            "published_at": "2024-12-05"
+          }
+        ]
+      },
+      "notes": "Denominator discipline is the point of this case."
+    },
+    {
+      "id": "case-048",
+      "question": "What do trade statistics show about the demonstration port container volumes?",
+      "category": "statistics",
+      "objective": "Volume trend question with two period fixtures.",
+      "expected_behavior": "Volumes keep their units and periods; the report separates trend statements from single period values.",
+      "fixtures": {
+        "container": [
+          {
+            "title": "Example fixture: port throughput annual table",
+            "url": "https://example.org/port-throughput",
+            "snippet": "Fixture table with placeholder container volumes for the demonstration port across recent years.",
+            "published_at": "2025-01-20"
+          },
+          {
+            "title": "Example fixture: port monthly bulletin",
+            "url": "https://example.org/port-bulletin",
+            "snippet": "Fixture bulletin with placeholder monthly container counts for the demonstration port.",
+            "published_at": "2026-08-01"
+          }
+        ]
+      },
+      "notes": "Annual and monthly periods must not be mixed."
+    },
+    {
+      "id": "case-049",
+      "question": "Which vital statistics does the demonstration population register publish annually?",
+      "category": "statistics",
+      "objective": "Publication coverage question with default fixture content.",
+      "expected_behavior": "The report lists what the sources cover and marks uncovered items as unanswered questions.",
+      "notes": "No fixtures key."
+    }
+  ]
+}

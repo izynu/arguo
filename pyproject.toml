@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arguo"
+version = "0.1.0"
+description = "Arguo: an open research intelligence toolkit with a traceable evidence ledger, citation auditing, and a curated research resource catalog"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Zynu", email = "izynu@users.noreply.github.com" },
+  { name = "Shraddha", email = "xhraddha@users.noreply.github.com" },
+]
+keywords = ["research", "evidence", "citations", "fact-checking", "open-source"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+  "pydantic>=2.7,<3",
+  "typer>=0.12,<1",
+  "httpx>=0.27,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "pytest-asyncio>=0.23,<1",
+  "ruff>=0.4,<1",
+]
+
+[project.scripts]
+arguo = "arguo.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/izynu/arguo"
+Documentation = "https://github.com/izynu/arguo#readme"
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/arguo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["python"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["python", "tests", "scripts", "evals", "examples"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "W"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"

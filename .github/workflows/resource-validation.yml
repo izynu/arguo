@@ -1,0 +1,43 @@
+# Scheduled validation of catalog resources and the skill package.
+#
+# Reports are uploaded as workflow artifacts only. This workflow never
+# commits anything back to the repository: there is no auto-commit loop.
+name: Resource validation
+
+on:
+  schedule:
+    # Mondays at 06:00 UTC.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate resources and skill
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate resource authoring files
+        run: python3 scripts/validate_resources.py
+
+      - name: Rebuild merged catalog
+        run: python3 scripts/build_resource_catalog.py
+
+      - name: Validate skill package
+        run: python3 scripts/validate_skill.py all
+
+      - name: Offline link check
+        run: python3 scripts/check_links.py
+
+      - name: Upload link check report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: catalog/link-check-report.json
